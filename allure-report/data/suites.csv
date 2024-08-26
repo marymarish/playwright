@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4162","navigate to form page @regression","chromium","Sun Aug 25 18:32:27 CDT 2024","passed","Sun Aug 25 18:32:32 CDT 2024","","tests/001-usePOM.spec.ts","",""
+"","4332","datepicker","chromium","Sun Aug 25 18:32:27 CDT 2024","passed","Sun Aug 25 18:32:32 CDT 2024","","tests/001-usePOM.spec.ts","",""
+"","3834","fill and submit form @smoke","chromium","Sun Aug 25 18:32:27 CDT 2024","passed","Sun Aug 25 18:32:31 CDT 2024","","tests/001-usePOM.spec.ts","",""
