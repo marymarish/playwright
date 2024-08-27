@@ -41,6 +41,20 @@ export default defineConfig<TestOptions>({
   // 2. command: npm i -D @playwright/test allure-playwright --force
   // 3. then:
   reporter: [
+    // ! aditional:
+    process.env.CI ? ["dot"] : ["list"],
+    // Add Argos reporter.
+    [
+      "@argos-ci/playwright/reporter",
+      {
+        // Upload to Argos on CI only.
+        uploadToArgos: !!process.env.CI,
+
+        // Set your Argos token (required if not using GitHub Actions).
+        // ! don't require if there is direct connection between git and argos
+        // token: "<YOUR-ARGOS-TOKEN>",
+      },
+    ],
     ['json', {outputFile: 'test-results/jsonReport.json'}],
     ['junit', {outputFile: 'test-results/junitReport.xlm'}],
     // ['allure-playwright'],
@@ -67,7 +81,8 @@ export default defineConfig<TestOptions>({
     video: {
       mode: 'off',
       size: {width: 1200, height: 600}
-    }
+    },
+    screenshot: "only-on-failure"
   },
 
 
